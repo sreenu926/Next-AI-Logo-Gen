@@ -31,7 +31,7 @@ function Hero() {
         <p className="text-center mb-4 text-sm md:text-xl border p-1 rounded-lg bg-amber-900 text-white">
           Preview of Premium Logos Generated.
         </p>
-        <div className="w-[400] md:w-[800]">
+        <div className="w-[350px] h-[350px] md:w-[800px] md:h-[800px]">
           <Image
             src={"/landing.png"}
             alt="landing"
