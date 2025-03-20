@@ -128,8 +128,9 @@ const LogoList = () => {
       const img = document.createElement("img");
       img.src = image; // Use the passed `image` parameter
       img.alt = "Logo Image";
-      img.style.maxWidth = "90%"; // Ensure it fits the window
-      img.style.height = "90%";
+      // Style adjustments for responsiveness
+      img.style.maxWidth = "95%"; // Allow it to fit smaller screens
+      img.style.maxHeight = "95%"; // Ensure it doesn’t exceed the screen height
       img.style.borderRadius = "10%";
       img.style.cursor = "pointer";
 
@@ -143,11 +144,22 @@ const LogoList = () => {
         document.body.removeChild(link);
       };
 
-      imageWindow.document.body.style.margin = "0"; // Remove margins
-      imageWindow.document.body.style.display = "flex";
-      imageWindow.document.body.style.justifyContent = "center";
-      imageWindow.document.body.style.alignItems = "center";
-      imageWindow.document.body.style.height = "100vh";
+      // Responsive styling for the window body
+      const bodyStyle = imageWindow.document.body.style;
+      bodyStyle.margin = "0"; // Remove margins
+      bodyStyle.display = "flex";
+      bodyStyle.justifyContent = "center";
+      bodyStyle.alignItems = "center";
+      bodyStyle.height = "100vh"; // Use the full screen height
+      bodyStyle.backgroundColor = "#f0f0f0"; // Light background for better visibility
+
+      // Add meta tag for viewport scaling (essential for mobile)
+      const metaTag = imageWindow.document.createElement("meta");
+      metaTag.name = "viewport";
+      metaTag.content = "width=device-width, initial-scale=1.0";
+      imageWindow.document.head.appendChild(metaTag);
+
+      // Append the image to the new window
       imageWindow.document.body.appendChild(img);
     }
   };

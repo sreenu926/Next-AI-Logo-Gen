@@ -109,7 +109,7 @@ const PaymentPage = ({ onPaymentSuccess }) => {
             disabled={isProcessing}
             className={`px-4 py-2 ${
               isProcessing
-                ? "bg-gray-400"
+                ? "bg-gray-400 mx-10 hover:bg-gray-600"
                 : "bg-blue-500 mx-20 hover:bg-blue-600"
             } text-white rounded`}
           >
