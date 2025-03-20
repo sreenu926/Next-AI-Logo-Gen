@@ -2,10 +2,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-// import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { UserButton, useUser, useClerk } from "@clerk/nextjs";
-import { LayoutDashboard, Menu } from "lucide-react";
+import { ContactRoundIcon, LayoutDashboard, Menu } from "lucide-react";
 
 function Header() {
   const { user } = useUser();
@@ -14,7 +13,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="px-6 lg:px-32 xl:px-48 2xl:px-56 p-2 md:p-4 flex justify-between items-center shadow-sm">
+    <div className="px-6 lg:px-12 xl:px-18 2xl:px-24 p-2 md:p-4 flex justify-between items-center shadow-sm">
       {/* Logo */}
       <Link href={"/"}>
         <Image
@@ -30,9 +29,17 @@ function Header() {
       <ul className="hidden rounded text-black px-2 py-1 sm:flex items-center gap-4">
         {user ? (
           <>
+            {/* Contact Button */}
+            <button
+              className="flex border-2 border-gray-100 p-2 rounded-lg bg-purple-500 text-white items-center gap-2 hover:bg-black cursor-pointer transition"
+              onClick={() => router.push("/contact")}
+            >
+              <ContactRoundIcon size={20} />
+              <span>Contact</span>
+            </button>
             {/* Dashboard Button */}
             <button
-              className="flex border-2 border-gray-500 p-2 rounded-lg bg-sky-500 text-white items-center gap-2 hover:bg-black cursor-pointer transition"
+              className="flex border-2 border-gray-100 p-2 rounded-lg bg-sky-500 text-white items-center gap-2 hover:bg-black cursor-pointer transition"
               onClick={() => router.push("/dashboard")}
             >
               <LayoutDashboard size={20} />
@@ -70,12 +77,25 @@ function Header() {
 
       {/* Dropdown Menu for Mobile */}
       {menuOpen && (
-        <div className="absolute right-4 top-16 bg-white shadow-md border rounded-lg p-4 flex flex-col gap-3 sm:hidden">
+        <div className="absolute right-4 top-16 bg-white shadow-md border rounded-lg p-4 flex flex-col gap-2 sm:hidden">
           {user ? (
             <>
               <button
-                className="flex border-2 border-gray-500 p-2 rounded-lg bg-sky-500 text-white items-center gap-2 hover:bg-black cursor-pointer transition"
-                onClick={() => router.push("/dashboard")}
+                className="flex border-2 border-gray-100 p-2 rounded-lg bg-purple-500 text-white items-center gap-2 hover:bg-black cursor-pointer transition"
+                onClick={() => {
+                  router.push("/contact");
+                  setMenuOpen(!menuOpen);
+                }}
+              >
+                <ContactRoundIcon size={20} />
+                <span>Contact</span>
+              </button>
+              <button
+                className="flex border-2 border-gray-100 p-2 rounded-lg bg-sky-500 text-white items-center gap-2 hover:bg-black cursor-pointer transition"
+                onClick={() => {
+                  router.push("/dashboard");
+                  setMenuOpen(!menuOpen);
+                }}
               >
                 <LayoutDashboard size={20} />
                 <span>Dashboard</span>

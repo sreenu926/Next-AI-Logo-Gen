@@ -41,7 +41,7 @@ export default {
         "⚫ Generate unlimited logos",
         "⚫ Shorter wait times",
         "⚫ Wait time: Less than 10 seconds",
-        "⚫ Only 3 Credits",
+        "⚫ Only 3 Free Credits",
       ],
       button: "Generate For 1 Credit",
     },
