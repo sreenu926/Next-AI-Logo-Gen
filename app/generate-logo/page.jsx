@@ -104,7 +104,7 @@ const GenerateLogo = () => {
   }, [userDetail]);
 
   return (
-    <div className="font-bold">
+    <div className="font-bold mb-12 md:mb-10">
       {loading && (
         <div className="mt-12 flex flex-col rounded-full items-center justify-center gap-4">
           <HeadingDescription

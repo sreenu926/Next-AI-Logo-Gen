@@ -7,7 +7,7 @@ import Colors from "@/app/_data/Colors";
 function LogoColorPallete({ onHandleInputChange, formData }) {
   const [selectedOption, setSelectedOption] = useState(formData?.palette);
   return (
-    <div className="my-0">
+    <div className="mb-11 md:mb-37">
       <HeadingDescription
         title={Lookup.LogoColorPaletteTitle}
         description={Lookup.LogoColorPaletteDesc}

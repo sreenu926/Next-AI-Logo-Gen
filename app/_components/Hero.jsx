@@ -4,6 +4,7 @@ import Lookup from "../_data/Lookup";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import Footer from ".//Footer";
 
 function Hero() {
   const [logoTitle, setLogoTitle] = useState();

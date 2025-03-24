@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Header from "./_components/Header";
-import Footer from "./_components/Footer";
 import axios from "axios";
 import { useUser } from "@clerk/nextjs"; // ✅ Import useAuth from Clerk
 import { UserDetailContext } from "./_context/UserDetailContext";
+import Footer from "./_components/Footer";
 
 function Provider({ children }) {
   const { user } = useUser();

@@ -21,6 +21,13 @@ function page() {
 
         <div className="bg-white shadow-md rounded-lg px-8 py-3 md:py-6">
           <div className="space-y-6">
+            {/* Name */}
+            <p className="text-sm md:text-xl">
+              Developer:{" "}
+              <span className="text-[#47509f] font-bold">
+                NAGASREENIVASARAO P
+              </span>
+            </p>
             {/* Email */}
             <div className="flex items-center justify-center space-x-4">
               <svg

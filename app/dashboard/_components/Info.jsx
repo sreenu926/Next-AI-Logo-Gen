@@ -31,7 +31,7 @@ const Info = () => {
   };
 
   return (
-    <div>
+    <div className="mb-8 md:mb-10">
       <div className="flex flex-col text-xl gap-4 sm:text-3xl sm:flex-row sm:justify-between items-center">
         <h2 className="font-bold">
           Hello, <span className="text-red-500">{userDetail?.name}</span>

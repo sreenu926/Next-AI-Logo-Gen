@@ -35,7 +35,7 @@ function LogoIdea({ formData, onHandleInputChange }) {
   };
 
   return (
-    <div className="my-0">
+    <div className="mb-0 md:mb-70">
       <HeadingDescription
         title={Lookup.LogoIdeaTitle}
         description={Lookup.LogoIdeaDesc}

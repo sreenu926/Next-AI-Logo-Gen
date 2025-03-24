@@ -66,35 +66,42 @@ const LogoList = () => {
     setIsDialogOpen(true);
   };
 
-  const getShareLinks = (logo) => {
-    if (!logo || !logo.id) return null;
+  // const getShareLinks = (logo) => {
+  //   if (!logo || !logo.id) return null;
 
-    // Get the base URL of your website
-    const baseURL = typeof window !== "undefined" ? window.location.origin : "";
-    // Construct the share URL using the logo ID
-    const shareURL = `${baseURL}/share/${logo.id}`;
+  //   // Get the base URL of your website
+  //   const baseURL = typeof window !== "undefined" ? window.location.origin : "";
 
-    // Prepare share text
-    const title = encodeURIComponent(logo.title || "Check out this logo!");
-    const description = encodeURIComponent(
-      logo.desc || "Look at this amazing logo!"
-    );
+  //   // Construct the share URL using the logo ID
+  //   const shareURL = `${baseURL}/share/${logo.id}`;
 
-    return {
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-        shareURL
-      )}&quote=${description}`,
-      twitter: `https://twitter.com/intent/tweet?text=${title}%0A${description}%0A${encodeURIComponent(
-        shareURL
-      )}`,
-      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-        shareURL
-      )}&summary=${description}`,
-      whatsapp: `https://api.whatsapp.com/send?text=${title}%0A${description}%0A${encodeURIComponent(
-        shareURL
-      )}`,
-    };
-  };
+  //   // Prepare share text
+  //   const title = encodeURIComponent(logo.title || "Check out this logo!");
+  //   const description = encodeURIComponent(
+  //     logo.desc || "Look at this amazing logo!"
+  //   );
+
+  //   // Ensure the share URL is valid
+  //   if (!shareURL || !shareURL.startsWith("http")) {
+  //     console.error("Invalid share URL:", shareURL);
+  //     return null;
+  //   }
+
+  //   return {
+  //     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+  //       shareURL
+  //     )}&quote=${description}`,
+  //     twitter: `https://twitter.com/intent/tweet?text=${title}%0A${description}%0A${encodeURIComponent(
+  //       shareURL
+  //     )}`,
+  //     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+  //       shareURL
+  //     )}&summary=${description}`,
+  //     whatsapp: `https://api.whatsapp.com/send?text=${title}%0A${description}%0A${encodeURIComponent(
+  //       shareURL
+  //     )}`,
+  //   };
+  // };
 
   const downloadImage = (image, title) => {
     if (typeof window === "undefined") return;
@@ -165,7 +172,7 @@ const LogoList = () => {
   };
 
   return (
-    <div className="my-10">
+    <div className="mb-10 md:mb-10">
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {logoList.length > 0
           ? logoList.map((logo) => (
@@ -176,10 +183,10 @@ const LogoList = () => {
                 {/* Delete Icon (Visible on Hover) */}
                 <Trash
                   onClick={() => deleteLogo(logo.id)}
-                  className="absolute top-3 left-3 w-8 h-8 p-1 bg-white text-red-500 rounded-full opacity-0 group-hover:opacity-100 transition cursor-pointer"
+                  className="absolute top-3 right-3 w-8 h-8 p-1 bg-white text-red-500 rounded-full opacity-0 group-hover:opacity-100 transition cursor-pointer"
                 />
 
-                <Share2
+                {/* <Share2
                   onClick={() => {
                     setSelectedLogo(logo);
                     setIsDialogOpen(true);
@@ -188,7 +195,7 @@ const LogoList = () => {
                   width={30}
                   height={30}
                   strokeWidth={1}
-                />
+                /> */}
 
                 <Image
                   onClick={() => {

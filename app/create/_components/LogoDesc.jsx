@@ -4,7 +4,7 @@ import Lookup from "@/app/_data/Lookup";
 
 function LogoDesc({ onHandleInputChange, formData }) {
   return (
-    <div className="my-0">
+    <div className="mb-33 md:mb-73">
       <HeadingDescription
         title={Lookup.LogoDescTitle}
         description={Lookup.LogoDescDesc}

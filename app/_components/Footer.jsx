@@ -5,6 +5,8 @@ export default function Footer() {
         position: "relative",
         bottom: 0,
         width: "100%",
+        margin: 0,
+        padding: 0,
         backgroundColor: "black",
         color: "white",
         textAlign: "center",
